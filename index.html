@@ -8,31 +8,351 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>	
 </head>
+
+<style type="text/css">
+	.nav > .active{
+		background-color: #006699;
+	
+	}
+	.nav .active > a{
+		color: white;
+	}
+	.nav > li > a{
+		color: grey;
+	}
+	
+	.nav > li:hover a{
+		color: white;
+		background-color: grey;
+	}
+	.list-group-item{
+		max-height: 100px;
+		overflow-y: auto;
+
+	}
+	.list-group{
+		max-height: 300px;
+		overflow-y: auto;
+	}
+
+/* Month header */
+.month {
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+    background: #006699;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month h3,.month h4{
+	margin: 0;
+	padding: 2px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+	position: absolute;
+  top: 30%;
+ cursor: pointer;
+    left: 20px;
+    
+}
+
+/* Next button */
+.month .next {
+	position: absolute;
+  top: 30%;
+ cursor: pointer;
+    right: 20px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weeks {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#006699;
+}
+
+.weeks li {
+    display: inline-block;
+    width: 13%;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Days (1-31) */
+.days {
+   
+    margin: 0;
+    padding: 10px 0;
+    background-color:#006699;
+}
+
+.days li {
+    
+   display: inline-block;
+    width: 14.2%;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.month .next:hover,.month .prev:hover{
+  background-color: rgba(0,0,0,.2);
+}
+.weeks li:hover{background-color: rgba(0,0,0,.2);}
+.days li:hover{background-color: rgba(0,0,0,.3);}
+
+
+</style>
 <body>
-<div class="row" style="background-color: #505050; padding-top: 10px;">
-			<div class="col-lg-2 pull-right">
-				<ul class="list-inline" style="color: white;">
-					<li><a href=""><img src="images/google.png">	</a></li>
-					<li><a href=""><img src="images/twitter.png">	</a></li>
-					<li><a href=""><img src="images/facebook.png">	</a></li>
-					<li><a href=""><img src="images/youtube.png">	</a></li>
-				</ul>
-
-			</div>
-		</div>
-	<div class="container">
-
-		<div class="row" style="padding: 20px;">
-			<div class="col-lg-2">
-				<img class="pull-right" src="images/logo.png" style="height: auto;max-width: 120px; ">
-			</div>
-			<div class="col-lg-10">
+	<!-- Social media row -->
+	<div class="row" style="background-color: #505050; ">
+				<div class="container">
 				
-				<h1 class="text-left" style="color: #006699;margin-top:50px;font-weight: bold;font-size: 50px;font-family: 'Oswald', sans-serif;
-">Department of Electronics and Communication</h1>
+					<ul class="list-inline pull-right" style="margin: 0;">
+						<li><a href=""><img class="img-responsive" src="images/google.png">	</a></li>
+						<li><a href=""><img class="img-responsive" src="images/twitter.png">	</a></li>
+						<li><a href=""><img class="img-responsive" src="images/facebook.png">	</a></li>
+						<li><a href=""><img class="img-responsive" src="images/youtube.png">	</a></li>
+					</ul>
+				</div>
+	</div>
+	<div class="container">
+			<!-- logo and department name -->
+			<div class="row" >
+				<div class="col-lg-2">
+					<img class="pull-right img-thumbnail img-responsive" src="images/logo.png" style="border:none; ">
+				</div>
+				<div class="col-lg-10">
+					<br><br><br><br>
+					<h1 class="text-left" style="color: #006699;font-weight: bold;font-family: 'Oswald', sans-serif;">Department of Electronics and Communication</h1>
+				</div>
 			</div>
-			
+
+		
+			<!-- navigation bar -->
+	   		<div class=" navbar-static">
+ 				<div class="navbar-header">
+					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+	            	</button>
+	            </div>
+
+	           	<div id="navbarCollapse" class="collapse navbar-collapse" style="padding:0;">
+		            <ul class="nav navbar-nav">
+		                <li class="active"><a href="#">Home</a></li>
+		                <li><a href="#">Students</a></li>
+						<li><a href="#">People</a></li> 
+		                <li><a href="#">Academics</a></li> 
+		                <li><a href="#">News</a></li> 
+		                <li><a href="#">Alumini</a></li> 
+	                </ul>
+				 </div>
+
+	  		</div>
+
+
+
+	</div>
+
+	<!-- row for background of corousel -->
+	<div class="row" style="background: url(images/square_bg.png) repeat #f1f1f1;">
+	
+		<!-- corousel container-->
+
+		<div class="container">
+	
+		    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+		        <ol class="carousel-indicators">
+		            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	 	            <li data-target="#myCarousel" data-slide-to="1"></li>
+		            <li data-target="#myCarousel" data-slide-to="2"></li>
+		        </ol>   
+		        <div class="carousel-inner">
+		            <div class="item active">
+		                <img class="img-responsive" src="images/placement.jpg" alt="First Slide" style="width:100%;height:auto;max-height:360px">
+     	            </div>
+		            <div class="item">
+		                <img  class="img-responsive" src="images/college.jpeg" alt="Second Slide" style="width:100%;height:auto;max-height:360px">
+		            </div>
+		            <div class="item">
+		                <img class="img-responsive" src="images/college_1.jpg" alt="Third Slide" style="width:100%;height:auto;max-height:360px">
+	                </div>
+		        </div>
+				<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+		            <span class="glyphicon glyphicon-chevron-left"></span>
+		        </a>
+		        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+		            <span class="glyphicon glyphicon-chevron-right"></span>
+		        </a>
+		    </div>
+
+
 		</div>
 	</div>
+	<div class="container">
+		<!-- about,vision, mission -->
+		<div class="col-lg-8">
+			<h3 style="color: #006699;font-weight: bold;font-family: 'Oswald', sans-serif; text-decoration: underline;">About</h3>
+			<p class="text-justify">The Electronics Engineering Department of Model Engineering College offers premier professional training with an eye on the modern developments in electronics and information technology. It offers a four year undergraduate course in electronics and communication engineering. The curriculum is designed to give adequate emphasis on application of Electronics in Communication Systems and Signal Processing and includes courses on Semiconductor Electronics, Electronic Circuits, Communication Engineering, Instrumentation, Signal Processing, Process Control, ASIC design and Industrial Management. A variety of elective courses are also offered. The Electronics Department is home to Digital Circuits, Communication, Industrial Instrumentation, Signal Processing and Microprocessor Labs. The undergraduate programme offered by the Department is one of the most sought after in the state. A syllabus encompassing the latest technologies, excellent laboratory facilities and exemplary faculty are the main reasons for the prized status accorded to this course.</p>
+
+			<p class="text-justify">The department has been recognized as a research Centre of the Cochin University of Science and Technology,. Several research scholars are carrying out high end research in various areas under the supervision of the faculty. Faculty members of the department have also been recognized as research guides under the Kerala Technological University. Faculty have expertise in multimedia signal processing, electronic device modelling, VLSI and embedded systems, microwave engineering and optoelectronics to supervise cutting edge research. </p>
+
+			<h3 style="color: #006699;font-weight: bold;font-family: 'Oswald', sans-serif; text-decoration: underline;">Vision</h3>
+			<p class="text-justify">To mould professionally competent electronics engineers with values and a global outlook, capable of innovations and entrepreneurial initiatives for addressing the changing needs of the world.</p>
+			<h3 style="color: #006699;font-weight: bold;font-family: 'Oswald', sans-serif; text-decoration: underline;">Mission</h3>
+			<p class="text-justify">To sustain a conducive academic environment for teaching, learning and research for grooming Electronics and Communication engineers who will apply technology for the benefit of the society.</p>
+
+
+			
+		</div>
+		<!-- news and calender -->
+		<div class="col-lg-4">
+			<br>
+			<br>
+			<div class="panel panel-primary">
+		
+				<div class="panel-heading">News and Anouncements</div>
+				<ul class="list-group">
+					<li class="list-group-item">MS workshops MS workshops MS workshops MS workshops MS workshopsMS workshops MS workshops MS workshopsMS workshops  workshops MS workshops MS workshops MS workshops MS workshopsMS workshops MS worksh  workshops MS workshops MS workshops MS workshops MS workshopsMS workshops MS worksh</li>
+					<li class="list-group-item list-group-item-danger">Assignment Submitind last dates</li>
+					<li class="list-group-item">sample new <a href=""> click here</a></li>  
+					<li class="list-group-item">example announcemenr</li>
+					<li class="list-group-item">Happy onam</li>
+				</ul>
+			</div>
+			<div>
+				<div class="calender">
+						  <ul class="list-unstyled month">
+						    <li >
+						      <h3 class="text-center">January</h3>
+						      <h4 class="text-center">2016</h4>
+						    </li>
+						    <span class="prev">&#10094;</span>
+						    <span class="next">&#10095;</span>
+						  </ul>
+						  <ul class="list-unstyled weeks">
+						    <li>Sun</li>
+						    <li>Mon</li>
+						    <li>Tue</li>
+						    <li>Wed</li>
+						    <li>Thu</li>
+						    <li>Fri</li>
+						    <li>Sat</li>
+						    
+						  </ul>
+						  <ul class="list-unstyled days">
+
+						  </ul>
+				</div>
+			</div>	
+
+		</div>
+	</div>
+
 </body>
 </html>
+<script type="text/javascript">
+	/*global console*/
+//calender
+//month
+//prev
+//next
+//weeks
+//days
+
+//punblic variables
+var calender = document.querySelector(".calender");//container of calender
+  var  topDiv = document.querySelector('.month');
+  var  monthDiv = calender.querySelector("h3");//h1 of monthes
+  var  yearDiv = calender.querySelector('h4');//h2 for years
+  var  weekDiv = calender.querySelector(".weeks");//week container
+  var  dayNames = weekDiv.querySelectorAll("li");//dayes name
+  var  dayItems = calender.querySelector(".days");//date of day container
+  var  prev = calender.querySelector(".prev");
+  var  next = calender.querySelector(".next");
+
+    // date variables
+  var  years = new Date().getFullYear();
+  var  monthes = new Date(new Date().setFullYear(years)).getMonth();
+  var  lastDayOfMonth = new Date(new Date(new Date().setMonth(monthes + 1)).setDate(0)).getDate();
+  var  dayOfFirstDateOfMonth = new Date(new Date(new Date().setMonth(monthes)).setDate(1)).getDay();
+
+    // array to define name of monthes
+  var  monthNames = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"];
+   
+    var i;//counter for day before month first day in week
+    var x;//counter for prev , next
+    var counter;//counter for day of month  days;
+
+
+//display dayes of month in items
+function days(x) {
+  'use strict';
+  dayItems.innerHTML = "";
+  monthes = monthes + x;
+  var currentDate=new Date();
+
+  /////////////////////////////////////////////////
+  //test for last month useful while prev ,max prevent go over array
+  if (monthes > 11) {
+    years = years + 1;
+    monthes = new Date(new Date(new Date().setFullYear(years)).setMonth(0)).getMonth();
+  }
+  if (monthes < 0) {
+    years = years - 1;
+    monthes = new Date(new Date(new Date().setFullYear(years)).setMonth(11)).getMonth();
+  }
+  
+  lastDayOfMonth = new Date(new Date(new Date(new Date().setFullYear(years)).setMonth(monthes + 1)).setDate(0)).getDate();
+  dayOfFirstDateOfMonth = new Date(new Date(new Date(new Date().setFullYear(years)).setMonth(monthes)).setDate(1)).getDay();
+  
+  yearDiv.innerHTML = years;
+  monthDiv.innerHTML = monthNames[monthes];
+  for (i = 0; i < dayOfFirstDateOfMonth; i = i + 1) {
+    if (dayOfFirstDateOfMonth === 7) { break; }
+    dayItems.innerHTML += "<li></li>";
+  }
+  for (counter = 1; counter <= lastDayOfMonth; counter = counter + 1) {
+
+    dayItems.innerHTML += "<li>" + (counter) + "</li>";
+    if(currentDate.getFullYear()==years){
+    	if(currentDate.getMonth()==monthes){
+    		if(currentDate.getDate()==counter){
+    			dayItems.childNodes[i+counter-1].style.color = "#006699";
+    			dayItems.childNodes[i+counter-1].style.backgroundColor = "white";
+    		}
+    	}
+    }
+
+  }
+ 
+
+}
+prev.onclick = function () {
+  'use strict';
+  days(-1);//decrement monthes
+};
+next.onclick = function () {
+  'use strict';
+  days(1);//increment monthes
+};
+days(0);
+
+//end
+</script>
