@@ -35,84 +35,88 @@
 		overflow-y: auto;
 	}
 
-/* Month header */
-.month {
-    padding: 0px;
-    margin: 0;
-    width: 100%;
-    background: #006699;
-    color: white;
-    text-align: center;
-    position: relative;
-}
+	/* Month header */
+	.month {
+	    padding: 0px;
+	    margin: 0;
+	    width: 100%;
+	    background: #006699;
+	    color: white;
+	    text-align: center;
+	    position: relative;
+	}
 
-/* Month list */
-.month ul {
-    margin: 0;
-    padding: 0;
-}
+	/* Month list */
+	.month ul {
+	    margin: 0;
+	    padding: 0;
+	}
 
-.month h3,.month h4{
-	margin: 0;
-	padding: 2px;
-}
+	.month h3,.month h4{
+		margin: 0;
+		padding: 2px;
+	}
 
-/* Previous button inside month header */
-.month .prev {
-	position: absolute;
-  top: 30%;
- cursor: pointer;
-    left: 20px;
-    
-}
+	/* Previous button inside month header */
+	.month .prev {
+		position: absolute;
+	  top: 30%;
+	 cursor: pointer;
+	    left: 20px;
+	    
+	}
 
-/* Next button */
-.month .next {
-	position: absolute;
-  top: 30%;
- cursor: pointer;
-    right: 20px;
-}
+	/* Next button */
+	.month .next {
+		position: absolute;
+	  top: 30%;
+	 cursor: pointer;
+	    right: 20px;
+	}
 
-/* Weekdays (Mon-Sun) */
-.weeks {
-    margin: 0;
-    padding: 10px 0;
-    background-color:#006699;
-}
+	/* Weekdays (Mon-Sun) */
+	.weeks {
+	    margin: 0;
+	    padding: 10px 0;
+	    background-color:#006699;
+	}
 
-.weeks li {
-    display: inline-block;
-    width: 13%;
-    color: white;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
+	.weeks li {
+	    display: inline-block;
+	    width: 13%;
+	    color: white;
+	    text-align: center;
+	    padding: 0;
+	    margin: 0;
+	}
 
-/* Days (1-31) */
-.days {
-   
-    margin: 0;
-    padding: 10px 0;
-    background-color:#006699;
-}
+	/* Days (1-31) */
+	.days {
+	   
+	    margin: 0;
+	    padding: 10px 0;
+	    background-color:#006699;
+	}
 
-.days li {
-    
-   display: inline-block;
-    width: 14.2%;
-    color: white;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
+	.days li {
+	    
+	   display: inline-block;
+	    width: 14.2%;
+	    color: white;
+	    text-align: center;
+	    padding: 0;
+	    margin: 0;
+	}
 
-.month .next:hover,.month .prev:hover{
-  background-color: rgba(0,0,0,.2);
-}
-.weeks li:hover{background-color: rgba(0,0,0,.2);}
-.days li:hover{background-color: rgba(0,0,0,.3);}
+	.month .next:hover,.month .prev:hover{
+	  background-color: rgba(0,0,0,.2);
+	}
+	.weeks li:hover{
+		background-color: rgba(0,0,0,.2);
+	}
+	.days li:hover{
+		background-color: rgba(0,0,0,.3);
+	}
 
 
 </style>
@@ -235,7 +239,7 @@
 					<li class="list-group-item">Happy onam</li>
 				</ul>
 			</div>
-			<div>
+			
 				<div class="calender">
 						  <ul class="list-unstyled month">
 						    <li >
@@ -253,33 +257,27 @@
 						    <li>Thu</li>
 						    <li>Fri</li>
 						    <li>Sat</li>
-						    
 						  </ul>
 						  <ul class="list-unstyled days">
 
 						  </ul>
 				</div>
-			</div>	
+				
 
 		</div>
+	</div>
+	<div class="row" style="background-color: #505050; ">
+		<p class=" text-center" style="color:white;">&#169; 2018 MEC. All rights reserved<p>
 	</div>
 
 </body>
 </html>
 <script type="text/javascript">
-	/*global console*/
-//calender
-//month
-//prev
-//next
-//weeks
-//days
 
-//punblic variables
-var calender = document.querySelector(".calender");//container of calender
+  var calender = document.querySelector(".calender");//container of calender
   var  topDiv = document.querySelector('.month');
-  var  monthDiv = calender.querySelector("h3");//h1 of monthes
-  var  yearDiv = calender.querySelector('h4');//h2 for years
+  var  monthDiv = calender.querySelector("h3");//h3 of monthes
+  var  yearDiv = calender.querySelector('h4');//h4 for years
   var  weekDiv = calender.querySelector(".weeks");//week container
   var  dayNames = weekDiv.querySelectorAll("li");//dayes name
   var  dayItems = calender.querySelector(".days");//date of day container
@@ -296,63 +294,62 @@ var calender = document.querySelector(".calender");//container of calender
   var  monthNames = ["January", "February", "March", "April", "May", "June",
                   "July", "August", "September", "October", "November", "December"];
    
-    var i;//counter for day before month first day in week
-    var x;//counter for prev , next
-    var counter;//counter for day of month  days;
+  var i;//counter for day before month first day in week
+  var x;//counter for prev , next
+  var counter;//counter for day of month  days;
 
 
-//display dayes of month in items
-function days(x) {
-  'use strict';
-  dayItems.innerHTML = "";
-  monthes = monthes + x;
-  var currentDate=new Date();
+  //display dayes of month in items
+  	function days(x) {
+		  'use strict';
+		  dayItems.innerHTML = "";
+		  monthes = monthes + x;
+		  var currentDate=new Date();
 
-  /////////////////////////////////////////////////
-  //test for last month useful while prev ,max prevent go over array
-  if (monthes > 11) {
-    years = years + 1;
-    monthes = new Date(new Date(new Date().setFullYear(years)).setMonth(0)).getMonth();
-  }
-  if (monthes < 0) {
-    years = years - 1;
-    monthes = new Date(new Date(new Date().setFullYear(years)).setMonth(11)).getMonth();
-  }
-  
-  lastDayOfMonth = new Date(new Date(new Date(new Date().setFullYear(years)).setMonth(monthes + 1)).setDate(0)).getDate();
-  dayOfFirstDateOfMonth = new Date(new Date(new Date(new Date().setFullYear(years)).setMonth(monthes)).setDate(1)).getDay();
-  
-  yearDiv.innerHTML = years;
-  monthDiv.innerHTML = monthNames[monthes];
-  for (i = 0; i < dayOfFirstDateOfMonth; i = i + 1) {
-    if (dayOfFirstDateOfMonth === 7) { break; }
-    dayItems.innerHTML += "<li></li>";
-  }
-  for (counter = 1; counter <= lastDayOfMonth; counter = counter + 1) {
+		  /////////////////////////////////////////////////
+		  //test for last month useful while prev ,max prevent go over array
+		  if (monthes > 11) {
+		    years = years + 1;
+		    monthes = new Date(new Date(new Date().setFullYear(years)).setMonth(0)).getMonth();
+		  }
+		  if (monthes < 0) {
+		    years = years - 1;
+		    monthes = new Date(new Date(new Date().setFullYear(years)).setMonth(11)).getMonth();
+		  }
+		  
+		  lastDayOfMonth = new Date(new Date(new Date(new Date().setFullYear(years)).setMonth(monthes + 1)).setDate(0)).getDate();
+		  dayOfFirstDateOfMonth = new Date(new Date(new Date(new Date().setFullYear(years)).setMonth(monthes)).setDate(1)).getDay();
+		  
+		  yearDiv.innerHTML = years;
+		  monthDiv.innerHTML = monthNames[monthes];
+		  for (i = 0; i < dayOfFirstDateOfMonth; i = i + 1) {
+		    if (dayOfFirstDateOfMonth === 7) { break; }
+		    dayItems.innerHTML += "<li></li>";
+		  }
+		  for (counter = 1; counter <= lastDayOfMonth; counter = counter + 1) {
 
-    dayItems.innerHTML += "<li>" + (counter) + "</li>";
-    if(currentDate.getFullYear()==years){
-    	if(currentDate.getMonth()==monthes){
-    		if(currentDate.getDate()==counter){
-    			dayItems.childNodes[i+counter-1].style.color = "#006699";
-    			dayItems.childNodes[i+counter-1].style.backgroundColor = "white";
-    		}
-    	}
-    }
+		    dayItems.innerHTML += "<li>" + (counter) + "</li>";
+		    if(currentDate.getFullYear()==years){
+		    	if(currentDate.getMonth()==monthes){
+		    		if(currentDate.getDate()==counter){
+		    			dayItems.childNodes[i+counter-1].style.color = "#006699";
+		    			dayItems.childNodes[i+counter-1].style.backgroundColor = "white";
+		    		}
+		    	}
+		    }
 
-  }
+		  }
  
+	}
+	prev.onclick = function () {
+	  'use strict';
+	  days(-1);//decrement monthes
+	};
+	next.onclick = function () {
+	  'use strict';
+	  days(1);//increment monthes
+	};
+	days(0);
 
-}
-prev.onclick = function () {
-  'use strict';
-  days(-1);//decrement monthes
-};
-next.onclick = function () {
-  'use strict';
-  days(1);//increment monthes
-};
-days(0);
-
-//end
+	//end
 </script>
