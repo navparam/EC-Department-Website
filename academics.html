@@ -35,7 +35,27 @@
 		overflow-y: auto;
 	}
 
-
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+		background-color: #006699;
+		border: none;
+		color: white;
+		outline: none;
+	}
+	.nav-tabs > li{
+		border:1px solid #006699;
+	}
+	.nav-tabs > li > a{
+		border-radius: 0;
+		margin: 0;
+	}
+	.nav-stacked > li + li + li{
+		margin: 0;
+		
+	}
+	.nav-stacked > li + li{
+		margin: 0;
+		border-top: none;
+	}
 
 
 </style>
@@ -91,14 +111,14 @@
 	<div class="container" >
 		<br><br>
 		  <ul class="nav nav-tabs nav-stacked col-lg-3">
-        <li><a href="#tab1" data-toggle="tab">Programs and Sylabus</a></li>
+        <li class="active"><a href="#tab1" data-toggle="tab">Programs and Sylabus</a></li>
         <li><a href="#tab2" data-toggle="tab">Academic Calender</a></li>
         <li><a href="#tab3" data-toggle="tab">Labs</a></li>
     </ul>
 
 
     <div class="tab-content">
-        <div class="tab-pane fade" id="tab1">
+        <div class="tab-pane fade active in" id="tab1">
         	<div class="row">
 	        	<div class="col-lg-4" style="margin: 10px;">
 	            	<div class="row" style="border-bottom: 1px solid #006699;">
