@@ -74,6 +74,20 @@
 		border: none;
 	}
 
+	.aq::after{
+		content: '';
+		display: block;
+		width: 0;
+		height: 2px;
+		background:#2d6699;
+		transition: width .3s;
+	}
+
+	.aq:hover::after{
+		width: 90%;
+		transition: width .3s;
+	}
+
 	/* Month header */
 	.month {
 		padding: 0px;
@@ -180,8 +194,8 @@
 				<img class="pull-right img-thumbnail img-responsive" src="images/logo.png" style="border:none; ">
 			</div>
 			<div class="col-lg-10">
-				<br><br><br><br>
-				<h1 class="text-left" style="color: #006699;font-weight: bold;font-family: 'Oswald', sans-serif;">Department of Electronics and Communication</h1>
+				<br><br>
+				<h1 class="text-left" style="color: #006699;font-weight: bold;font-family: 'Oswald', sans-serif;">Department of Electronics and <br>Communication</h1>
 			</div>
 		</div>
 
@@ -198,7 +212,7 @@
 
 			<div id="navbarCollapse" class="collapse navbar-collapse" style="padding:0;">
 				<ul class="nav navbar-nav">
-					<li ><a href="index.html">Home</a></li>
+					<li ><a  href="index.html">Home</a></li>
 					<li><a href="#">Students</a></li>
 					<li><a href="#">People</a></li> 
 					<li class="active"><a href="academics.html">Academics</a></li> 
@@ -210,11 +224,11 @@
 		</div>
 	</div>
 	<div class="container" >
-		<div class="wrapper  col-lg-3" style="padding:0;">
-			<ul class="nav nav-tabs nav-stacked col-lg-12">
-				<li class="active"><a href="#tab1" data-toggle="tab">Programs and Sylabus</a></li>
-				<li><a href="#tab2" data-toggle="tab">Academic Calender</a></li>
-				<li><a href="#tab3" data-toggle="tab">Labs</a></li>
+		<div class="side-nav  col-lg-3" style="padding:0;">
+			<ul class="nav nav-tabs nav-stacked col-lg-12" style=" min-height: 75vh;height: auto;">
+				<li class="active"><a href="#tab1" class="aq" data-toggle="tab">Programs and Sylabus</a></li>
+				<li><a href="#tab2" data-toggle="tab" class="aq">Academic Calender</a></li>
+				<li><a href="#tab3" data-toggle="tab" class="aq">Labs</a></li>
 			</ul>
 		</div>
 
@@ -286,65 +300,66 @@
 
 					<div class="col-lg-6" style="padding: 30px;">
 
-							<div class="row" >
-								<div class="calender">
-									<ul class="list-unstyled month">
-										<li >
-											<h3 class="text-center">January</h3>
-											<h4 class="text-center">2016</h4>
-										</li>
-										<span class="prev">&#10094;</span>
-										<span class="next">&#10095;</span>
-									</ul>
-									<ul class="list-unstyled weeks">
-										<li>Sun</li>
-										<li>Mon</li>
-										<li>Tue</li>
-										<li>Wed</li>
-										<li>Thu</li>
-										<li>Fri</li>
-										<li>Sat</li>
-									</ul>
-									<ul class="list-unstyled days">
+						<div class="row" >
+							<div class="text-center">
+								<p class="lead"><a class="" href="">KTU 2018-2019 Calender</a></p>
 
-									</ul>
-								</div>
-							</div> 
+								<p class="lead"><a class="" href="">KTU 2017-2018 Calender</a></p>
+							</div>
+						</div> 
 						
-					</div> 
+					</div>    
+
 					<div class="col-lg-6" style="padding: 30px;">
 
-							<div class="row" >
-								<div class="text-center">
-									<p class="lead"><a class="" href="">KTU 2018-2019 Calender</a></p>
+						<div class="row" >
+							<div class="calender">
+								<ul class="list-unstyled month">
+									<li >
+										<h3 class="text-center">January</h3>
+										<h4 class="text-center">2016</h4>
+									</li>
+									<span class="prev">&#10094;</span>
+									<span class="next">&#10095;</span>
+								</ul>
+								<ul class="list-unstyled weeks">
+									<li>Sun</li>
+									<li>Mon</li>
+									<li>Tue</li>
+									<li>Wed</li>
+									<li>Thu</li>
+									<li>Fri</li>
+									<li>Sat</li>
+								</ul>
+								<ul class="list-unstyled days">
 
-									<p class="lead"><a class="" href="">KTU 2017-2018 Calender</a></p>
-								</div>
-							</div> 
+								</ul>
+							</div>
+						</div> 
 						
-					</div>     	            
+					</div> 	            
 				</div>
 				<div class="tab-pane fade" id="tab3">
 					<div class="col-lg-12" style="padding: 30px;">
 
-							<div class="row" >
+						<div class="row" >
 							<h3 class="text-center" style="color: #006699;font-weight: bold;font-family: 'Oswald', sans-serif; ">Labs</h3>
-								<div class="col-lg-12" style="border-top: 1px solid #006699;">
-									<ul class="list" style="padding: 20px;">
-										<li>Advanced Microprocessor Lab</li>
-										<li>Circuits Lab</li>
-										<li>Communication Lab</li>
-										<li>Digital lab</li>
-										<li>Digital Communication Lab</li>
-										<li>E-Cad Lab</li>
-										<li>Microprocessor Lab</li>
-										<li>Test Lab</li>
-										<li>VLSI Lab</li>
-									</ul>
-									<p>Major Instruments available in the lab are Deep Word Length DSOs, PIC Development System, Programmable Power Supply,Low Distortion Signal Generator, PCB Prototype Machine, SMD Rework Station, Atmel/AVR Development System, Arbitrary Waveform Generator,Spectrum Analyser etc.DSP Trainers with Filter Design Software, Logic Analyser, Various Speed Drives both AC and DC Programmable Logic Controller , Computerised Multiprocessor Control stations, Arbitrary wave Generators, Electronic CAD Package, Digitiser, FPGA Development System with related Hardware and Software , PIC Evaluation board and Evaluation Kit , Intel 89C51 Development Systems, Microwave Bench, Fibre Optics Communication System are also available.</p>
-								</div>
-
+							<div class="col-lg-12" style="border-top: 1px solid #006699;">
+								<ul class="list" style="padding: 20px;">
+									<li>Advanced Microprocessor Lab</li>
+									<li>Circuits Lab</li>
+									<li>Communication Lab</li>
+									<li>Digital lab</li>
+									<li>Digital Communication Lab</li>
+									<li>E-Cad Lab</li>
+									<li>Microprocessor Lab</li>
+									<li>Test Lab</li>
+									<li>VLSI Lab</li>
+								</ul>
+								<p>Major Instruments available in the lab are Deep Word Length DSOs, PIC Development System, Programmable Power Supply,Low Distortion Signal Generator, PCB Prototype Machine, SMD Rework Station, Atmel/AVR Development System, Arbitrary Waveform Generator,Spectrum Analyser etc.DSP Trainers with Filter Design Software, Logic Analyser, Various Speed Drives both AC and DC Programmable Logic Controller , Computerised Multiprocessor Control stations, Arbitrary wave Generators, Electronic CAD Package, Digitiser, FPGA Development System with related Hardware and Software , PIC Evaluation board and Evaluation Kit , Intel 89C51 Development Systems, Microwave Bench, Fibre Optics Communication System are also available.</p>
 							</div>
+
+						</div>
 
 					</div>
 				</div>
